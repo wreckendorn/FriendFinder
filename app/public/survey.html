@@ -3,8 +3,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Survey</title>
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
@@ -35,16 +33,16 @@
                     <div class="card border-0">
                         <h4 class="card-title">About You</h4>
                             <div class="form-group">
-                                <label for="userNameInput">Name (Required)</label>
+                                <label for="userName">Name (Required)</label>
                                 <input type="text" class="form-control" id="userNameInput">
                             </div>
                             <div class="form-group">
-                                <label for="userPhotosURL">Link to Photo Image (Required)</label>
+                                <label for="userPhotos">Link to Photo Image (Required)</label>
                                 <input type="url" class="form-control" id="userPhotoURL">
                             </div>
                     </div>
                 </div>
-            </div>
+            </div> 
 
             <div class="row">
                 <div class="col">
@@ -62,13 +60,13 @@
                                 <option>5 (Strongly Agree)</option>
                             </select>
                             </div>
-                        </div>       
+                        </div>   
                         
                         <h4 class="card-title">Question 2</h4>
                         <p class="card-text">Generally speaking, you rely more on your experience than your imagination.</p>
                         <div class="form-group row mb-4">  
                             <div class="col-3">
-                            <select class="form-control" id="q1Input">
+                            <select class="form-control" id="q2Input">
                                 <option selected>Select an Option</option>
                                 <option>1 (Strongly Disagree)</option>
                                 <option>2</option>
@@ -83,7 +81,7 @@
                         <p class="card-text">You find it easy to stay relaxed and focused even when there is some pressure.</p>
                         <div class="form-group row mb-4">  
                             <div class="col-3">
-                            <select class="form-control" id="q1Input">
+                            <select class="form-control" id="q3Input">
                                 <option selected>Select an Option</option>
                                 <option>1 (Strongly Disagree)</option>
                                 <option>2</option>
@@ -98,7 +96,7 @@
                         <p class="card-text">You rarely do something just out of sheer curiosity.</p>
                         <div class="form-group row mb-4">  
                             <div class="col-3">
-                            <select class="form-control" id="q1Input">
+                            <select class="form-control" id="q4Input">
                                 <option selected>Select an Option</option>
                                 <option>1 (Strongly Disagree)</option>
                                 <option>2</option>
@@ -113,7 +111,7 @@
                         <p class="card-text">People can rarely upset you.</p>
                         <div class="form-group row mb-4">  
                             <div class="col-3">
-                            <select class="form-control" id="q1Input">
+                            <select class="form-control" id="q5Input">
                                 <option selected>Select an Option</option>
                                 <option>1 (Strongly Disagree)</option>
                                 <option>2</option>
@@ -128,7 +126,7 @@
                         <p class="card-text">It is often difficult for you to relate to other people’s feelings.</p>
                         <div class="form-group row mb-4">  
                             <div class="col-3">
-                            <select class="form-control" id="q1Input">
+                            <select class="form-control" id="q6Input">
                                 <option selected>Select an Option</option>
                                 <option>1 (Strongly Disagree)</option>
                                 <option>2</option>
@@ -143,7 +141,7 @@
                         <p class="card-text">In a discussion, truth should be more important than people’s sensitivities.</p>
                         <div class="form-group row mb-4">  
                             <div class="col-3">
-                            <select class="form-control" id="q1Input">
+                            <select class="form-control" id="q7Input">
                                 <option selected>Select an Option</option>
                                 <option>1 (Strongly Disagree)</option>
                                 <option>2</option>
@@ -158,7 +156,7 @@
                         <p class="card-text">You rarely get carried away by fantasies and ideas.</p>
                         <div class="form-group row mb-4">  
                             <div class="col-3">
-                            <select class="form-control" id="q1Input">
+                            <select class="form-control" id="q8Input">
                                 <option selected>Select an Option</option>
                                 <option>1 (Strongly Disagree)</option>
                                 <option>2</option>
@@ -173,7 +171,7 @@
                         <p class="card-text">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</p>
                         <div class="form-group row mb-4">  
                             <div class="col-3">
-                            <select class="form-control" id="q1Input">
+                            <select class="form-control" id="q9Input">
                                 <option selected>Select an Option</option>
                                 <option>1 (Strongly Disagree)</option>
                                 <option>2</option>
@@ -188,7 +186,7 @@
                         <p class="card-text">You feel more energetic after spending time with a group of people.</p>
                         <div class="form-group row mb-4">  
                             <div class="col-3">
-                            <select class="form-control" id="q1Input">
+                            <select class="form-control" id="q10Input">
                                 <option selected>Select an Option</option>
                                 <option>1 (Strongly Disagree)</option>
                                 <option>2</option>
@@ -200,15 +198,19 @@
                         </div>   
 
                     </div>
-                </div>
+                </div> 
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+           
         </form>
+
+            <button type="submit" class="btn btn-primary btn-block" id="add-btn">Submit</button>
+
+
         <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav ">
                     <li class="nav-item">
-                      <a class="nav-link text-primary" href="#">API Friends List</a>
+                      <a class="nav-link text-primary" href="http://localhost:8080/api/friends">API Friends List</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link text-primary" href="https://github.com/wreckendorn/FriendFinder">Github Repo</a>
@@ -217,8 +219,76 @@
                 </div>
               </nav>
     </div>
+    <script type="text/javascript">
+        function score() {
+            var answerArray = [];
+            var answer = "";
+            for(var i = 1; i < 11; i++) {
+                answer = $("#q" + [i] + "Input").val().substring(0,1);
+                answerArray.push(answer);
+            }   
+            return answerArray;        
+        }
 
+        // function checkCompatibility() {
+        //     var currentURL = window.location.origin;
+
+        //     $.ajax({ url: currentURL + "/api/", method: "GET" })
+        //     .then(function(friends) {
+
+
+        //     console.log("------------------------------------");
+        //     console.log("URL: " + currentURL + "/api/friends");
+        //     console.log("------------------------------------");
+
+
+        //     console.log(friends);
+        //     console.log("------------------------------------");
+
+        //     var getSum = 0;
+        //     var friendList = [];
+        //     // this loop goes through the friends objects from the JSON
+        //     for (var i = 0; i < friends.length; i++) {
+        //         getSum = 0;
+        //         // this loop goes through the scores array and adds them together
+        //         for (var x = 0; x < friends[i].scores.length; x++){
+        //             getSum += friends[i].scores[x]
+        //         }
+        //         //adds the sum score to an array
+        //         friendList[i] = getSum;
+        //     }
+        //     console.log(friendList);
+        //     });
+        // }
+
+        $("#add-btn").on("click", function(event) {
+             event.preventDefault();
+       
+           var newFriend = {
+               friendName: $("#userNameInput").val().trim(),
+               friendPhoto: $("#userPhotoURL").val().trim(),
+               friendScore: score()
+           };
+
+           $.post("/api/survey", newFriend)
+            .then(function(data) {
+            });
+
+            var currentURL = window.location.origin;
+            $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+            .then(function(friendsArray) {
+                console.log(friendsArray);
+            })
+          
+       });
+          
+       
+       </script>
 </body>
+
 </html>
+
+
+
 
 
