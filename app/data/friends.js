@@ -4,40 +4,40 @@
 
 var friendsArray = [
 {
-  "name":"Rafael",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "name":"Raphael",
+  "photo":"https://vignette.wikia.nocookie.net/tmnt/images/1/11/Retro_raph.jpg/revision/latest?cb=20131019131517",
   "scores":[
-      5,
-      1,
-      4,
-      4,
-      5,
-      1,
+      3,
       2,
+      1,
+      3,
+      1,
       5,
-      4,
+      1,
+      3,
+      1,
       1
     ]
 },
 {
   "name":"Leonardo",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "photo":"https://i1.wp.com/www.teenagemutantninjaturtles.com/wp-content/uploads/2012/04/Leonardo-2003-cartoon.jpg?ssl=1",
   "scores":[
       5,
       5,
       5,
+      3,
+      3,
+      1,
+      4,
+      3,
       5,
-      5,
-      5,
-      5,
-      5,
-      5,
-      5
+      4
     ]
 },
 {
   "name":"Donatello",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "photo":"https://vignette.wikia.nocookie.net/tmnt2012series/images/d/db/1987Donatello.jpg/revision/latest?cb=20141229063428",
   "scores":[
       4,
       4,
@@ -52,8 +52,8 @@ var friendsArray = [
     ]
 },
 {
-  "name":"Sally",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "name":"Michaelangelo",
+  "photo":"https://imgc.allpostersimages.com/img/print/posters/michelangelo-teenage-mutant-ninja-turtles_a-G-8866809-0.jpg",
   "scores":[
       3,
       3,
@@ -68,8 +68,8 @@ var friendsArray = [
     ]
 },
 {
-  "name":"George",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+  "name":"April",
+  "photo":"https://i1.wp.com/www.teenagemutantninjaturtles.com/wp-content/uploads/2013/02/April-ONeil-Original-Cartoon-19871.jpg?ssl=1",
   "scores":[
       2,
       2,
