@@ -16,6 +16,29 @@
     </style>
 </head>
 <body>
+       
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<!-- end of modal -->
+
 
     <div class="container">
 
@@ -203,7 +226,7 @@
            
         </form>
 
-            <button type="submit" class="btn btn-primary btn-block" id="add-btn">Submit</button>
+            <button type="submit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="add-btn">Submit</button>
 
 
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -220,64 +243,37 @@
               </nav>
     </div>
     <script type="text/javascript">
+
         function score() {
             var answerArray = [];
-            var answer = "";
+            var answer = 0;
+            var number = 0;
             for(var i = 1; i < 11; i++) {
                 answer = $("#q" + [i] + "Input").val().substring(0,1);
-                answerArray.push(answer);
+                number = parseInt(answer);
+                answerArray.push(number);
             }   
             return answerArray;        
         }
-
-        // function checkCompatibility() {
-        //     var currentURL = window.location.origin;
-
-        //     $.ajax({ url: currentURL + "/api/", method: "GET" })
-        //     .then(function(friends) {
-
-
-        //     console.log("------------------------------------");
-        //     console.log("URL: " + currentURL + "/api/friends");
-        //     console.log("------------------------------------");
-
-
-        //     console.log(friends);
-        //     console.log("------------------------------------");
-
-        //     var getSum = 0;
-        //     var friendList = [];
-        //     // this loop goes through the friends objects from the JSON
-        //     for (var i = 0; i < friends.length; i++) {
-        //         getSum = 0;
-        //         // this loop goes through the scores array and adds them together
-        //         for (var x = 0; x < friends[i].scores.length; x++){
-        //             getSum += friends[i].scores[x]
-        //         }
-        //         //adds the sum score to an array
-        //         friendList[i] = getSum;
-        //     }
-        //     console.log(friendList);
-        //     });
-        // }
-
+        //event handler for submit button
         $("#add-btn").on("click", function(event) {
              event.preventDefault();
-       
+       //builds new object from user's data
            var newFriend = {
-               friendName: $("#userNameInput").val().trim(),
-               friendPhoto: $("#userPhotoURL").val().trim(),
-               friendScore: score()
+               name: $("#userNameInput").val().trim(),
+               photo: $("#userPhotoURL").val().trim(),
+               scores: score()
            };
-
-           $.post("/api/survey", newFriend)
+        //sneds new object from form to server data using API route
+           $.post("/api/friends", newFriend)
             .then(function(data) {
             });
 
             var currentURL = window.location.origin;
+            //get all friend objects from server data
             $.ajax({ url: currentURL + "/api/friends", method: "GET" })
             .then(function(friendsArray) {
-                console.log(friendsArray);
+              
             })
           
        });
