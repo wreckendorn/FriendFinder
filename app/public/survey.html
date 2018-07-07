@@ -1,14 +1,13 @@
-<!-- 1. Your survey should have 10 questions of your choosing. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Survey</title>
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Bootstrap 4.1-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-
     <style>
         h4 {
             font-weight: bold;
@@ -18,11 +17,8 @@
 <body>
        
     <!-- modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -30,10 +26,7 @@
             <div class="modal-body">
               ...
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+         
           </div>
         </div>
       </div>
@@ -226,7 +219,7 @@
            
         </form>
 
-            <button type="submit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal" id="add-btn">Submit</button>
+            <button type="submit" class="btn btn-primary btn-block" id="add-btn">Submit</button>
 
 
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -258,6 +251,7 @@
         //event handler for submit button
         $("#add-btn").on("click", function(event) {
              event.preventDefault();
+     
        //builds new object from user's data
            var newFriend = {
                name: $("#userNameInput").val().trim(),
@@ -267,6 +261,8 @@
         //sneds new object from form to server data using API route
            $.post("/api/friends", newFriend)
             .then(function(data) {
+                console.log(data);
+                $("myModal").modal("show");
             });
 
             var currentURL = window.location.origin;
@@ -275,7 +271,7 @@
             .then(function(friendsArray) {
               
             })
-          
+            
        });
           
        
